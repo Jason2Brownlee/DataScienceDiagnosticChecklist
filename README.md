@@ -6,21 +6,13 @@ _Checks for Data Scientists with Urgent Problems_
 
 ## Help! Scores on the Test Set are _worse_ than the Train Set
 
-This problem is typically referred to as the "_generalization gap_", "_train-test gap_", or simply as "_overfitting_", where performance of a final chosen model on the hold out test set is worse than on the train set.
+This problem is typically referred to as the "_**generalization gap**_", "_**train-test gap**_", or simply as "_**overfitting**_", where performance of a final chosen model on the hold out test set is worse than on the train set.
 
-There are many causes for this problem, and we must know the specific cause in order to address it.
+We can use diagnostic tests to systematically probe the data and the model in order to gather evidence about the unknown underlying cause of a performance mismatch. We probably cannot _know_ anything for sure, but we can build a case and then take action in response. You will eventually have to make a judgement call.
 
-We can use diagnostic tests to probe the data and the model in order to gather evidence about the unknown underlying cause of a performance mismatch. We cannot _know_ anything for sure, but we can build a case and then take action in response. You will eventually have to make a judgement call.
+**Scope**: Machine learning and deep learning predictive modeling for regression and classification tasks.
 
-I think the top-level motivating question (from which all other questions follow) is:
-
-* _What evidence can we gather that the train and test sets are appropriate and reliable?_
-
-**Scope**: Predictive modeling for regression and classification tasks.
-
-**Warning**: Once you evaluate a model on the test set, the test set should be discarded to prevent data leakage. Ideally, use this checklist at project start to avoid compromising your test set integrity.
-
-Let's walk through some categories of common causes and checklists of questions we can use to learn more.
+Let's walk through some categories of checklists of questions we can use to learn more.
 
 ## Table of Contents
 
