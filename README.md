@@ -446,7 +446,7 @@ This is a big topic, but to get started, consider:
 
 **Q. Do I need to perform all of these checks?**
 
-No. Use the checks that are appropriate for your project. For example, checks that use k-fold cross-validation may not be appropriate for a deep learning model that takes days/weeks to fit. Use your judgement
+No. Use the checks that are appropriate for your project. For example, checks that use k-fold cross-validation may not be appropriate for a deep learning model that takes days/weeks to fit. Use your judgement.
 
 **Q. Is this overkill?**
 
@@ -478,7 +478,7 @@ Perhaps. It comes down to a judgement call, like most things.
 
 **Q. Do you do this on your own projects?**
 
-Yeah, a lot of it. I want to be able to (metaphorically) stand tall, put my hand on my heart, and testify that the test set and any results on it are as correct and indicative of real world performance as I know how to make it.
+Yeah, a lot of it. I want to be able to (metaphorically) stand tall, put my hand on my heart, and testify that the test set results on it are as correct and indicative of real world performance as I know how to make them.
 
 **Q. Why do we sometimes use a paired t-Test and sometimes not (and Mann-Whitney U Test vs Wilcoxon signed-rank test)**
 
@@ -490,7 +490,7 @@ I've not had much luck with these measures in practice. Also, classical ideas of
 
 ## Glossary of Terms
 
-Let's ensure we're talking about the same things.
+Let's ensure we're talking about the same things:
 
 * **Chosen Model**: A Chosen Model is the specific machine learning algorithm or architecture selected as the final candidate for solving a particular problem after comparing different options during the model selection phase.
 * **Dataset**: A Dataset is a structured collection of data samples, where each sample contains features (input variables) and typically a target variable (for supervised learning), used to train and evaluate machine learning models.
