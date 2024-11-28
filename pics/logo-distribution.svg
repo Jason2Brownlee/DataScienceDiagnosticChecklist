@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying glass handle -->
+  <path d="M140 140 L 180 180" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Magnifying glass rim -->
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#2D3748" stroke-width="12"/>
+  
+  <!-- Glass lens -->
+  <circle cx="100" cy="100" r="54" fill="#E2E8F0"/>
+  
+  <!-- Training distribution (normal curve) -->
+  <path d="M60 120 C 70 120 75 60 100 60 C 125 60 130 120 140 120" 
+        fill="none" stroke="#4299E1" stroke-width="3"/>
+  
+  <!-- Test distribution (skewed curve) -->
+  <path d="M60 120 C 70 120 80 80 100 80 C 130 80 135 120 140 120" 
+        fill="none" stroke="#F56565" stroke-width="3"/>
+  
+  <!-- Histogram bars for training -->
+  <rect x="65" y="90" width="8" height="30" fill="#4299E1" fill-opacity="0.3"/>
+  <rect x="80" y="75" width="8" height="45" fill="#4299E1" fill-opacity="0.3"/>
+  <rect x="95" y="70" width="8" height="50" fill="#4299E1" fill-opacity="0.3"/>
+  <rect x="110" y="75" width="8" height="45" fill="#4299E1" fill-opacity="0.3"/>
+  <rect x="125" y="90" width="8" height="30" fill="#4299E1" fill-opacity="0.3"/>
+  
+  <!-- Histogram bars for test -->
+  <rect x="65" y="95" width="8" height="25" fill="#F56565" fill-opacity="0.3"/>
+  <rect x="80" y="85" width="8" height="35" fill="#F56565" fill-opacity="0.3"/>
+  <rect x="95" y="80" width="8" height="40" fill="#F56565" fill-opacity="0.3"/>
+  <rect x="110" y="90" width="8" height="30" fill="#F56565" fill-opacity="0.3"/>
+  <rect x="125" y="100" width="8" height="20" fill="#F56565" fill-opacity="0.3"/>
+</svg>

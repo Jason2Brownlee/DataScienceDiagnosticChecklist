@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying glass handle -->
+  <path d="M140 140 L 180 180" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Magnifying glass rim -->
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#2D3748" stroke-width="12"/>
+  
+  <!-- Glass lens -->
+  <circle cx="100" cy="100" r="54" fill="#E2E8F0"/>
+  
+  <!-- Training data curve (higher) -->
+  <path d="M60 120 Q 80 60, 140 80" fill="none" stroke="#4299E1" stroke-width="4"/>
+  
+  <!-- Test data curve (lower) -->
+  <path d="M60 130 Q 80 90, 140 100" fill="none" stroke="#F56565" stroke-width="4"/>
+  
+  <!-- Data points for training -->
+  <circle cx="70" cy="90" r="3" fill="#4299E1"/>
+  <circle cx="85" cy="75" r="3" fill="#4299E1"/>
+  <circle cx="100" cy="70" r="3" fill="#4299E1"/>
+  <circle cx="115" cy="75" r="3" fill="#4299E1"/>
+  <circle cx="130" cy="85" r="3" fill="#4299E1"/>
+  
+  <!-- Data points for testing -->
+  <circle cx="70" cy="110" r="3" fill="#F56565"/>
+  <circle cx="85" cy="100" r="3" fill="#F56565"/>
+  <circle cx="100" cy="95" r="3" fill="#F56565"/>
+  <circle cx="115" cy="98" r="3" fill="#F56565"/>
+  <circle cx="130" cy="105" r="3" fill="#F56565"/>
+</svg>

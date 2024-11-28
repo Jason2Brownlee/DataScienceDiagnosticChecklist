@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying glass elements -->
+  <path d="M140 140 L 180 180" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#2D3748" stroke-width="12"/>
+  <circle cx="100" cy="100" r="54" fill="#E2E8F0"/>
+  
+  <!-- Multiple overlapping curves showing model variations -->
+  <!-- Most stable region (curves close together) -->
+  <path d="M60 100 C 75 100, 85 90, 95 90 C 105 90, 115 100, 140 100" 
+        fill="none" stroke="#4299E1" stroke-width="2" stroke-opacity="0.3"/>
+  <path d="M60 98 C 75 98, 85 88, 95 88 C 105 88, 115 98, 140 98" 
+        fill="none" stroke="#4299E1" stroke-width="2" stroke-opacity="0.3"/>
+  <path d="M60 102 C 75 102, 85 92, 95 92 C 105 92, 115 102, 140 102" 
+        fill="none" stroke="#4299E1" stroke-width="2" stroke-opacity="0.3"/>
+        
+  <!-- Less stable region (curves diverge more) -->
+  <path d="M60 105 C 75 105, 85 85, 95 85 C 105 85, 115 105, 140 105" 
+        fill="none" stroke="#4299E1" stroke-width="2" stroke-opacity="0.3"/>
+  <path d="M60 95 C 75 95, 85 80, 95 80 C 105 80, 115 95, 140 95" 
+        fill="none" stroke="#4299E1" stroke-width="2" stroke-opacity="0.3"/>
+        
+  <!-- Most unstable region (curves far apart) -->
+  <path d="M60 110 C 75 110, 85 75, 95 75 C 105 75, 115 110, 140 110" 
+        fill="none" stroke="#4299E1" stroke-width="2" stroke-opacity="0.3"/>
+  <path d="M60 90 C 75 90, 85 70, 95 70 C 105 70, 115 90, 140 90" 
+        fill="none" stroke="#4299E1" stroke-width="2" stroke-opacity="0.3"/>
+  
+  <!-- Data points -->
+  <circle cx="70" cy="100" r="2.5" fill="#F56565"/>
+  <circle cx="85" cy="85" r="2.5" fill="#F56565"/>
+  <circle cx="100" cy="90" r="2.5" fill="#F56565"/>
+  <circle cx="115" cy="95" r="2.5" fill="#F56565"/>
+  <circle cx="130" cy="100" r="2.5" fill="#F56565"/>
+  
+  <!-- Mean prediction line -->
+  <path d="M60 100 C 75 100, 85 85, 95 85 C 105 85, 115 100, 140 100" 
+        fill="none" stroke="#2D3748" stroke-width="2"/>
+</svg>

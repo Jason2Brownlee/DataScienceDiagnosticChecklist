@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying glass handle -->
+  <path d="M140 140 L 180 180" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Magnifying glass rim -->
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#2D3748" stroke-width="12"/>
+  
+  <!-- Glass lens -->
+  <circle cx="100" cy="100" r="54" fill="#E2E8F0"/>
+  
+  <!-- Reasonable fit curve (black, now dashed) -->
+  <path d="M60 110 Q 100 85, 140 95" fill="none" stroke="#2D3748" stroke-width="3" stroke-dasharray="6,4"/>
+  
+  <!-- Overfit curve (red) with more vertical movement -->
+  <path d="M60 110 C 65 110, 68 80, 70 80 
+           C 72 80, 73 80, 75 70
+           C 77 60, 78 60, 80 95
+           C 82 130, 83 130, 85 110
+           C 87 90, 88 90, 90 115
+           C 92 140, 93 140, 95 85
+           C 97 65, 98 65, 100 95
+           C 102 125, 103 125, 105 75
+           C 107 65, 108 65, 110 105
+           C 112 145, 113 145, 115 80
+           C 117 65, 118 65, 120 90
+           C 122 115, 123 115, 125 75
+           C 127 65, 128 65, 130 105
+           C 132 145, 133 145, 135 85
+           C 137 65, 138 65, 140 95" 
+        fill="none" stroke="#F56565" stroke-width="2" />
+  
+  <!-- Training data points (blue) with more vertical spread -->
+  <circle cx="70" cy="80" r="3" fill="#4299E1"/>
+  <circle cx="75" cy="70" r="3" fill="#4299E1"/>
+  <circle cx="80" cy="95" r="3" fill="#4299E1"/>
+  <circle cx="85" cy="110" r="3" fill="#4299E1"/>
+  <circle cx="90" cy="115" r="3" fill="#4299E1"/>
+  <circle cx="95" cy="85" r="3" fill="#4299E1"/>
+  <circle cx="100" cy="95" r="3" fill="#4299E1"/>
+  <circle cx="105" cy="75" r="3" fill="#4299E1"/>
+  <circle cx="110" cy="105" r="3" fill="#4299E1"/>
+  <circle cx="115" cy="80" r="3" fill="#4299E1"/>
+  <circle cx="120" cy="90" r="3" fill="#4299E1"/>
+  <circle cx="125" cy="75" r="3" fill="#4299E1"/>
+  <circle cx="130" cy="105" r="3" fill="#4299E1"/>
+  <circle cx="135" cy="85" r="3" fill="#4299E1"/>
+  <circle cx="140" cy="95" r="3" fill="#4299E1"/>
+</svg>

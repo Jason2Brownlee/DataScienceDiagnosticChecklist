@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying glass elements -->
+  <path d="M140 140 L 180 180" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#2D3748" stroke-width="12"/>
+  <circle cx="100" cy="100" r="54" fill="#E2E8F0"/>
+  
+  <!-- Prediction curve -->
+  <path d="M60 105 C 75 95, 85 90, 95 95 C 105 100, 115 105, 140 90" 
+        fill="none" stroke="#2D3748" stroke-width="2.5"/>
+  
+  <!-- Residual lines and points -->
+  <!-- Positive residuals (above line) -->
+  <line x1="70" y1="105" x2="70" y2="85" stroke="#F56565" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="70" cy="85" r="3" fill="#F56565"/>
+  
+  <line x1="85" y1="90" x2="85" y2="75" stroke="#F56565" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="85" cy="75" r="3" fill="#F56565"/>
+  
+  <line x1="115" y1="105" x2="115" y2="85" stroke="#F56565" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="115" cy="85" r="3" fill="#F56565"/>
+  
+  <!-- Negative residuals (below line) -->
+  <line x1="95" y1="95" x2="95" y2="110" stroke="#4299E1" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="95" cy="110" r="3" fill="#4299E1"/>
+  
+  <line x1="130" y1="90" x2="130" y2="115" stroke="#4299E1" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="130" cy="115" r="3" fill="#4299E1"/>
+  
+  <!-- Small residuals -->
+  <line x1="105" y1="100" x2="105" y2="105" stroke="#48BB78" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="105" cy="105" r="3" fill="#4299E1"/>
+  
+  <line x1="125" y1="92" x2="125" y2="95" stroke="#48BB78" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="125" cy="95" r="3" fill="#4299E1"/>
+</svg>

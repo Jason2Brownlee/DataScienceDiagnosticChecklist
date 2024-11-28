@@ -19,6 +19,27 @@ I think the top-level motivating question (from which all other questions follow
 
 Let's walk through some categories of common causes and checklists of questions we can use to learn more.
 
+## Table of Contents
+
+1. Problem Definition
+2. Train/Test Split Procedure
+3. Data Preparation Leakage
+4. Quantify the Performance Gap
+5. Challenge the Performance Gap
+6. Data Distribution Checks
+7. Performance Distribution Checks
+8. Residual Error Checks
+9. Residual Error Distribution Checks
+10. Overfitting Train Set Checks
+11. Overfitting Test Harness Checks
+12. Overfitting Test Set Checks
+13. Model Robustness/Stability Checks
+14. So Now What? Action Steps
+15. Frequently Asked Questions
+16. Glossary of Terms
+17. Disclaimer
+18. [About](#about)
+
 ## Problem Definition
 
 Let's define our terms and the problem we are having (also see the [glossary](#glossary-of-terms)).
