@@ -2,8 +2,6 @@
 
 <img src="pics/logo-fit.svg" width="300" />
 
-_Checks for Data Scientists with Urgent Problems_
-
 ## Help! Scores on the Test Set are _worse_ than the Train Set
 
 This problem is typically referred to as the "_**generalization gap**_", "_**train-test gap**_", or simply as "_**overfitting**_", where performance of a final chosen model on the hold out test set is worse than on the train set.
@@ -488,7 +486,7 @@ When comparing distribution central tendencies on train vs test folds under k-fo
 
 **Q. What about measure of model complexity to help diagnose overfitting (e.g. AIC/BIC/MDL/etc.)?**
 
-I've not had much luck with these measures in practice. Also, classical ideas of overfitting were focused on "overparameterization". I'm not convinced this is entirely relevant with modern machine learning and data science models. We often overparameterize and still achieve SOTA performance. Put another way: Overfitting != Overparameterization. That being said, regularizing away from large magnitude coefficients/weights remains a good practice when overfit.
+I've not had much luck with these measures in practice. Also, classical ideas of overfitting were focused on "overparameterization". I'm not convinced this is entirely relevant with modern machine learning and deep learning models. We often overparameterize and still achieve SOTA performance. Put another way: Overfitting != Overparameterization. That being said, regularizing away from large magnitude coefficients/weights remains a good practice when overfit.
 
 ## Glossary of Terms
 
@@ -524,7 +522,7 @@ I've been helping data scientists for more than a decade via coaching, consultin
 
 I've helped hundreds (thousands?) of data scientists one-on-one over the years, and the **most common problem is the Generalization Gap** (i.e., performance on new data in the test set or in production is worse than the expected performance from the test harness).
 
-The checklist above is (an updated version of) a diagnostic tool I used to work through the problem with my clients (e.g., in a Google Doc).
+The checklist above is (an updated version of) a diagnostic tool I used to work through the problem with my clients.
 
 I don't do so much consulting anymore, but I know from experience how valuable this checklist can be for those struggling with the generalization gap problem, so I've decided to share it here publicly.
 
