@@ -1,5 +1,8 @@
 # Data Science Diagnostic Checklist
-## _Checks for Data Scientists with Urgent Problems_
+
+<img src="pics/logo-fit.svg" width="300" />
+
+_Checks for Data Scientists with Urgent Problems_
 
 ## Help! Scores on the Test Set are _worse_ than the Train Set
 
@@ -21,23 +24,23 @@ Let's walk through some categories of common causes and checklists of questions 
 
 ## Table of Contents
 
-1. Problem Definition
-2. Train/Test Split Procedure
-3. Data Preparation Leakage
-4. Quantify the Performance Gap
-5. Challenge the Performance Gap
-6. Data Distribution Checks
-7. Performance Distribution Checks
-8. Residual Error Checks
-9. Residual Error Distribution Checks
-10. Overfitting Train Set Checks
-11. Overfitting Test Harness Checks
-12. Overfitting Test Set Checks
-13. Model Robustness/Stability Checks
-14. So Now What? Action Steps
-15. Frequently Asked Questions
-16. Glossary of Terms
-17. Disclaimer
+1. [Problem Definition](#problem-definition)
+2. [Train/Test Split Procedure](#traintest-split-procedure)
+3. [Data Preparation Leakage](#data-preparation-leakage)
+4. [Quantify the Performance Gap](#quantify-the-performance-gap)
+5. [Challenge the Performance Gap](#challenge-the-performance-gap)
+6. [Data Distribution Checks](#data-distribution-checks)
+7. [Performance Distribution Checks](#performance-distribution-checks)
+8. [Residual Error Checks](#residual-error-checks)
+9. [Residual Error Distribution Checks](#residual-error-distribution-checks)
+10. [Overfitting Train Set Checks](#overfitting-train-set-checks)
+11. [Overfitting Test Harness Checks](#overfitting-test-harness-checks)
+12. [Overfitting Test Set Checks](#overfitting-test-set-checks)
+13. [Model Robustness/Stability Checks](#model-robustnessstability-checks)
+14. [So Now What? Action Steps](#so-now-what-action-steps)
+15. [Frequently Asked Questions](#frequently-asked-questions)
+16. [Glossary of Terms](#glossary-of-terms)
+17. [Disclaimer](#disclaimer)
 18. [About](#about)
 
 ## Problem Definition
@@ -56,6 +59,8 @@ Variations on this problem:
 2. Performance on the **test harness** and **test set** appropriately match, but performance on **data in production** is worse.
 
 ## Train/Test Split Procedure
+
+<img src="pics/logo-procedure.svg" width="300" />
 
 * _Is there evidence that the split of the dataset into train/test subsets followed best practices?_
 
@@ -104,6 +109,8 @@ Compare the distributions of standard un-tuned machine learning model performanc
 
 ## Data Preparation Leakage
 
+<img src="pics/logo-leakage.svg" width="300" />
+
 * _Is there evidence that knowledge from the test set leaked to the train set during data preparation?_
 
 Any data cleaning (beyond removing duplicates), preparation, or analysis like tasks performed on the whole dataset (prior to splitting) may result in leakage from the test set to the train set and a potential optimistic bias.
@@ -117,6 +124,8 @@ This bias is typically not discovered until the model is employed on entirely ne
 5. Did you perform exploratory data analysis (EDA) on the whole dataset prior to the split (e.g. statistical summaries, plotting, etc.)?
 
 ## Quantify the Performance Gap
+
+<img src="pics/logo-gap.svg" width="300" />
 
 There is variance in the model (e.g. random seed, training data) and variance in its performance (e.g. test data). Vary these elements and see if the distributions overlap or not. If they do, any gap might be statistical noise. If they don't, it might be a real issue that requires more digging.
 
@@ -145,6 +154,8 @@ There is variance in the model (e.g. random seed, training data) and variance in
 	4. Do the performance scores on train and test sets have the same variance (e.g. F-test, Levene's test)?
 
 ## Challenge the Performance Gap
+
+<img src="pics/logo-loss.svg" width="300" />
 
 Often the train set score on the test harness is a mean (e.g. via k-fold cross-validation) and the test set score is a point estimate. Perhaps comparing these different types of quantities is the source of the problem.
 
@@ -178,6 +189,8 @@ Next, compare the distributions of these performance scores.
 
 ## Data Distribution Checks
 
+<img src="pics/logo-distribution.svg" width="300" />
+
 We assume that the train set and the test set are a representative statistical sample from the domain. As such, they should have the same data distributions.
 
 * _Is there statistical evidence that the train and test sets have the same data distributions?_
@@ -200,6 +213,8 @@ Extensions:
 * Compare the train set and the test set to a new data sample (if available).
 
 ## Performance Distribution Checks
+
+<img src="pics/logo-performance.svg" width="300" />
 
 We assume model performance on the train set and test set generalizes to new data. As such, model performance on the train and test sets have the same distribution.
 
@@ -234,6 +249,8 @@ Next, compare the distributions of these performance scores (all together or per
 6. Do performance score points on a scatter plot fall on the expected diagonal line?
 
 ## Residual Error Checks
+
+<img src="pics/logo-residuals.svg" width="300" />
 
 We assume the train and test sets have a balanced sample of difficult-to-predict-examples.
 
@@ -284,6 +301,8 @@ For classification tasks that require a nominal class label:
 
 
 ## Overfitting Train Set Checks
+
+<img src="pics/logo-overfitting.svg" width="300" />
 
 We assume that model performance on train data generalizes to new data. As such, model performance on the train and hold out data in the test harness should have the same distribution.
 
@@ -364,6 +383,8 @@ This is called test set leakage and results in an optimistic estimate of model p
 
 
 ## Model Robustness/Stability Checks
+
+<img src="pics/logo-robustness.svg" width="300" />
 
 Perhaps we can describe the robustness or stability of a model as how much its performance varies under noise.
 
