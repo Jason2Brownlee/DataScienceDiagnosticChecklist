@@ -464,7 +464,7 @@ Yes, tons. Email me and I can send something through. If there's enough demand, 
 
 **Q. Do all of these checks help?**
 
-No. There is a lot of redundancy across the categories and the checks. This is a good thing as it gives many different perspectives on evidence gathering and more opportunities that we will catch the cause of the fault.
+No. There is a lot of redundancy across the categories and the checks. This is a good thing as it gives many different perspectives on evidence gathering and more opportunities that we will catch the cause of the fault. Also, the specific aspects of some projects make some avenues of checking available and some not.
 
 **Q. Don't we always expect a generalization gap?**
 
@@ -485,6 +485,10 @@ Yeah, a lot of it. I want to be able to (metaphorically) stand tall, put my hand
 **Q. Why do we sometimes use a paired t-Test and sometimes not (and Mann-Whitney U Test vs Wilcoxon signed-rank test)**
 
 When comparing distribution central tendencies on train vs test folds under k-fold cross-validation, we use a paired statistical hypothesis test like the paired Student's t-Test or the Wilcoxon signed-rank test because the train/test folds are naturally dependent upon each other. If we do not account for this dependence, we would miss-estimate the significance. When the two data distributions are independent, we can use an independent test such as the (unpaired) Student's t-Test or the Mann-Whitney U Test.
+
+**Q. What about measure of model complexity to help diagnose overfitting (e.g. AIC/BIC/MDL/etc.)?**
+
+I've not had much luck with these measures in practice. Also, classical ideas of overfitting were focused on "overparameterization". I'm not convinced this is entirely relevant with modern machine learning and data science models. We often overparameterize and still achieve SOTA performance. Put another way: Overfitting != Overparameterization. That being said, regularizing away from large magnitude coefficients/weights remains a good practice when overfit.
 
 ## Glossary of Terms
 
