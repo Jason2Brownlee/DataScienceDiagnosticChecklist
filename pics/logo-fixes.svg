@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying glass handle -->
+  <path d="M140 140 L 180 180" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Magnifying glass rim -->
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#2D3748" stroke-width="12"/>
+  
+  <!-- Glass lens -->
+  <circle cx="100" cy="100" r="54" fill="#E2E8F0"/>
+  
+  <!-- First Band-Aid (blue) -->
+  <g transform="translate(100 100) rotate(45) translate(-100 -100)">
+    <rect x="70" y="90" width="60" height="16" rx="4" fill="#4299E1"/>
+    <rect x="85" y="93" width="30" height="10" fill="#BEE3F8"/>
+    <circle cx="77" cy="95" r="1.5" fill="#BEE3F8"/>
+    <circle cx="77" cy="98" r="1.5" fill="#BEE3F8"/>
+    <circle cx="77" cy="101" r="1.5" fill="#BEE3F8"/>
+    <circle cx="123" cy="95" r="1.5" fill="#BEE3F8"/>
+    <circle cx="123" cy="98" r="1.5" fill="#BEE3F8"/>
+    <circle cx="123" cy="101" r="1.5" fill="#BEE3F8"/>
+  </g>
+  
+  <!-- Second Band-Aid (red) -->
+  <g transform="translate(100 100) rotate(-45) translate(-100 -100)">
+    <rect x="70" y="90" width="60" height="16" rx="4" fill="#4299E1"/>
+    <rect x="85" y="93" width="30" height="10" fill="#BEE3F8"/>
+    <circle cx="77" cy="95" r="1.5" fill="#BEE3F8"/>
+    <circle cx="77" cy="98" r="1.5" fill="#BEE3F8"/>
+    <circle cx="77" cy="101" r="1.5" fill="#BEE3F8"/>
+    <circle cx="123" cy="95" r="1.5" fill="#BEE3F8"/>
+    <circle cx="123" cy="98" r="1.5" fill="#BEE3F8"/>
+    <circle cx="123" cy="101" r="1.5" fill="#BEE3F8"/>
+  </g>
+</svg>

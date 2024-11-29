@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying glass handle -->
+  <path d="M140 140 L 180 180" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Magnifying glass rim -->
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#2D3748" stroke-width="12"/>
+  
+  <!-- Glass lens -->
+  <circle cx="100" cy="100" r="54" fill="#E2E8F0"/>
+  
+  <!-- Checklist boxes -->
+  <rect x="65" y="70" width="16" height="16" fill="none" stroke="#4299E1" stroke-width="2"/>
+  <rect x="65" y="95" width="16" height="16" fill="none" stroke="#4299E1" stroke-width="2"/>
+  <rect x="65" y="120" width="16" height="16" fill="none" stroke="#4299E1" stroke-width="2"/>
+  
+  <!-- Check marks -->
+  <path d="M68 77 L73 82 L78 72" stroke="#4299E1" stroke-width="2" fill="none"/>
+  <path d="M68 102 L73 107 L78 97" stroke="#4299E1" stroke-width="2" fill="none"/>
+  
+  <!-- Text lines -->
+  <rect x="90" y="73" width="40" height="2" fill="#F56565"/>
+  <rect x="90" y="98" width="40" height="2" fill="#F56565"/>
+  <rect x="90" y="123" width="40" height="2" fill="#F56565"/>
+</svg>

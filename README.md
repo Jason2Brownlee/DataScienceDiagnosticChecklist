@@ -1,6 +1,6 @@
 # Data Science Diagnostic Checklist
 
-<img src="pics/logo-fit.svg" width="300" />
+<img src="pics/logo-checklist.svg" width="300" />
 
 ## Help! My **Model** is **_worse_** on the **Test Set** than the **Train Set**
 
@@ -396,6 +396,8 @@ We assume that small changes to the model and data result in proportionally smal
 
 
 ## So Now What? Action Steps
+
+<img src="pics/logo-fixes.svg" width="300" />
 
 So, there may be an issue with your test set or your model. Now what do we do?
 
