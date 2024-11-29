@@ -27,7 +27,7 @@ Home: <https://github.com/Jason2Brownlee/DataScienceDiagnosticChecklist>
 11. [Overfitting Test Harness Checks](#overfitting-test-harness-checks)
 12. [Overfitting Test Set Checks](#overfitting-test-set-checks)
 13. [Model Robustness/Stability Checks](#model-robustnessstability-checks)
-14. [So Now What? Action Steps](#so-now-what-action-steps)
+14. [So Now What? Interventions](#so-now-what-interventions)
 15. [Frequently Asked Questions](#frequently-asked-questions)
 16. [Glossary of Terms](#glossary-of-terms)
 17. [Disclaimer](#disclaimer)
