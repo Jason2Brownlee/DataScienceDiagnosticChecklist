@@ -10,6 +10,8 @@ We can use diagnostic tests to systematically probe the data and the model in or
 
 Let's walk through some categories of checklists of questions we can use to learn more.
 
+Home: <https://github.com/Jason2Brownlee/DataScienceDiagnosticChecklist>
+
 ## Table of Contents
 
 1. [Problem Definition](#problem-definition)
