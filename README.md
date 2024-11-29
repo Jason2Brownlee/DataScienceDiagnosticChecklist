@@ -1,4 +1,4 @@
-<img src="pics/cover.png" width="600" alt="Data Science Diagnostic Checklist" />
+<img src="pics/cover.png" width="640" alt="Data Science Diagnostic Checklist" />
 
 ## Help! My **Model** is **_worse_** on the **Test Set** than the **Train Set**
 
