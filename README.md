@@ -1,7 +1,5 @@
 # Data Science Diagnostic Checklist
 
-<img src="pics/logo-checklist.svg" width="300" />
-
 ## Help! My **Model** is **_worse_** on the **Test Set** than the **Train Set**
 
 This problem is typically referred to as the "_**generalization gap**_", "_**train-test gap**_", or simply as "_**overfitting**_", where performance of a final chosen model on the hold out test set is worse than on the train set.
@@ -11,6 +9,8 @@ We can use diagnostic tests to systematically probe the data and the model in or
 **Scope**: Machine learning and deep learning predictive modeling for regression and classification tasks.
 
 Let's walk through some categories of checklists of questions we can use to learn more.
+
+<img src="pics/logo-checklist.svg" width="300" />
 
 ## Table of Contents
 
