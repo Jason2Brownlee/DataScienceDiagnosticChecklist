@@ -488,6 +488,18 @@ When comparing distribution central tendencies on train vs test folds under k-fo
 
 I've not had much luck with these measures in practice. Also, classical ideas of overfitting were focused on "overparameterization". I'm not convinced this is entirely relevant with modern machine learning and deep learning models. We often overparameterize and still achieve SOTA performance. Put another way: Overfitting != Overparameterization. That being said, regularizing away from large magnitude coefficients/weights remains a good practice when overfit.
 
+**Q. Help! The test results are ambiguous. What do I do?**
+
+This is the case more often than not. Don't panic, here are some ideas:
+- Can you vary the test harness in some way in order to increase the size of the statistical sample (e.g. k=10 in cross-valuation, repeated cross-validation, bootstrap samples, etc.)?
+- Can you perform a sensitivity analysis for the test and see if there is a point of transition?
+- Can you try a different but related test to see if it provides less ambiguous results?
+- Can you try a completely different test type to see if it gives a stronger signal?
+
+**Q. Help! All checks suggest my test set is no good. What do I do?**
+
+Good, we learned something about the project! Apply the same test to alternate splits of the data (ideally, a sensitivity analysis of many different split sizes) and compare the results. Do they improve? Typically there is a split size that defines a transition point between stable statistical tests/performance and unstable results.
+
 ## Glossary of Terms
 
 Let's ensure we're talking about the same things:
