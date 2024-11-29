@@ -395,13 +395,13 @@ We assume that small changes to the model and data result in proportionally smal
 1. Perform a sensitivity analysis of noise perturbation tests and confirm that model performance degrades gracefully (perhaps proportionality) to the amount of noise added to the dataset.
 
 
-## So Now What? Action Steps
+## So Now What? Interventions
 
 <img src="pics/logo-fixes.svg" width="300" />
 
 So, there may be an issue with your test set or your model. Now what do we do?
 
-### Do Nothing
+### 1. Do Nothing
 
 Take the estimate of model performance on the test set as the expected behavior of the model on new data.
 
@@ -409,7 +409,32 @@ If test set performance is to be presented to stakeholders, don't present a poin
 
 * Estimate performance using many (30+) bootstrap samples of the test set and report the median and 95% confidence interval.
 
-### Fix the Test Set
+### 2. Fix the Test Harness
+
+In most cases, the fix involves making the test harness results less biased (avoid overfitting) and more stable/robust (more performance sampling).
+
+1. Use k-fold cross-validation, if you're not already.
+2. Use 10 folds instead of 5 or 3, if you can afford the computational cost.
+3. Use repeated 10-fold cross-validation, if you can afford the computational cost.
+4. Use a pipeline of data cleaning, transforms, feature engineering, etc. steps that are applied automatically.
+	- The pipeline steps must be fit on train data (same data used to fit a candidate/final model) and applied to all data before it touches the model.
+	- See [`sklearn.pipeline.Pipeline`](https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html)
+5. Use nested k-fold cross-validation or nested train/validation split to tune model hyperparameters for a chosen model.
+
+### 3. Fix Overfitting Generally
+
+Even with best practices, high-capacity models can overfit.
+
+This is a big topic, but to get started, consider:
+
+1. **Simplification**: Reducing model complexity by using fewer layers/parameters, removing features, or choosing a simpler model architecture, etc. This limits the model's capacity to memorize training data and forces it to learn more generalizable patterns instead.
+2. **Regularization**: Adding penalty terms to the loss function that discourage complex models by penalizing large weights. Common approaches include L1 (Lasso) and L2 (Ridge) regularization, which help prevent the model from relying too heavily on any single feature.
+3. **Early Stopping**: Monitoring model performance on a validation set during training and stopping when performance begins to degrade. This prevents the model from continuing to fit noise in the training data after it has learned the true underlying patterns.
+4. **Data Augmentation**: Artificially increasing the size and diversity of the training dataset by applying transformations or adding noise to existing samples. This exposes the model to more variation and helps it learn more robust features rather than overfitting to specific training examples.
+
+Beyond these simple measures: dive into the literature for your domain and for your model and sniff out common/helpful regularization techniques you can test.
+
+### 4. Fix the Test Set
 
 Perhaps the test set is large enough and data/performance distributions match well enough, but there are specific examples that are causing problems.
 
@@ -419,7 +444,9 @@ Perhaps the test set is large enough and data/performance distributions match we
 * Perhaps a weighting can be applied to samples and a sample-weighting aware learning algorithm can be used?
 * Perhaps you can augment the test set with artificial/updated/contrived examples (danger)?
 
-### Get a New Test Set
+**Warning**: Purists will hate this, for good reason. There is a slippery slope of removing all the hard-to-predict examples or too many examples. You're intentionally biasing the data and manipulating the results. Your decisions need to be defensible.
+
+### 5. Get a New Test Set
 
 Perhaps the test set is too small (high variance of results) or the data/performance distributions are different or one of many reasons above.
 
@@ -430,17 +457,7 @@ Sometimes this is not possible, in which case:
 * Combine train and test set into the whole dataset again and develop a new split using best practices above
 	* Ideally use a sensitivity analysis to ensure to choose an optimal split/avoid the same problem.
 
-There is a risk of an optimistic bias with this approach as you already know something about what does/doesn't work on examples in the original test set.
-
-### Fix Overfitting
-
-This is a big topic, but to get started, consider:
-
-1. Cross-validation (if not already):  Splitting data into multiple training and validation sets to get a more robust estimate of model performance. This helps ensure the model generalizes well across different subsets of data rather than memorizing specific patterns in a single training set.
-2. Simplification: Reducing model complexity by using fewer layers/parameters, removing features, or choosing a simpler model architecture, etc. This limits the model's capacity to memorize training data and forces it to learn more generalizable patterns instead.
-3. Regularization: Adding penalty terms to the loss function that discourage complex models by penalizing large weights. Common approaches include L1 (Lasso) and L2 (Ridge) regularization, which help prevent the model from relying too heavily on any single feature.
-4. Early Stopping: Monitoring model performance on a validation set during training and stopping when performance begins to degrade. This prevents the model from continuing to fit noise in the training data after it has learned the true underlying patterns.
-5. Data Augmentation: Artificially increasing the size and diversity of the training dataset by applying transformations or adding noise to existing samples. This exposes the model to more variation and helps it learn more robust features rather than overfitting to specific training examples.
+**Warning**: Purists will hate this too, for good reason. There is a risk of an optimistic bias with this approach as you already know something about what does/doesn't work on examples in the original test set.
 
 
 
