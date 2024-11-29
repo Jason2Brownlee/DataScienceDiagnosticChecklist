@@ -1,6 +1,4 @@
-<img src="pics/cover.png" width="600" />
-
-# Data Science Diagnostic Checklist
+<img src="pics/cover.png" width="600" alt="Data Science Diagnostic Checklist" />
 
 ## Help! My **Model** is **_worse_** on the **Test Set** than the **Train Set**
 
@@ -11,8 +9,6 @@ We can use diagnostic tests to systematically probe the data and the model in or
 **Scope**: Machine learning and deep learning predictive modeling for regression and classification tasks.
 
 Let's walk through some categories of checklists of questions we can use to learn more.
-
-<img src="pics/logo-checklist.svg" width="300" />
 
 ## Table of Contents
 
