@@ -2,7 +2,7 @@
 
 <img src="pics/logo-fit.svg" width="300" />
 
-## Help! Scores on the Test Set are _worse_ than the Train Set
+## Help! My **Model** is **_worse_** on the **Test Set** than the **Train Set**
 
 This problem is typically referred to as the "_**generalization gap**_", "_**train-test gap**_", or simply as "_**overfitting**_", where performance of a final chosen model on the hold out test set is worse than on the train set.
 
