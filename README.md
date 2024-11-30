@@ -17,7 +17,7 @@ Home: <https://github.com/Jason2Brownlee/DataScienceDiagnosticChecklist>
 1. [Problem Definition](#problem-definition)
 2. [Train/Test Split Procedure](#traintest-split-procedure)
 3. [Split Size Sensitivity Analysis](#split-size-sensitivity-analysis)
-4. [Data Preparation Leakage](#data-preparation-leakage)
+4. [Data Leakage](#data-leakage)
 5. [Quantify the Performance Gap](#quantify-the-performance-gap)
 6. [Challenge the Performance Gap](#challenge-the-performance-gap)
 7. [Data Distribution Checks](#data-distribution-checks)
@@ -104,21 +104,51 @@ Compare the distributions of standard un-tuned machine learning model performanc
 4. Compare the variance of model performance scores (e.g. F-test, Levene's test).
 5. Compare the divergence of model performance score distributions.
 
-## Data Preparation Leakage
+## Data Leakage
 
 <img src="pics/logo-leakage.svg" width="300" />
 
-* _Is there evidence that knowledge from the test set leaked to the train set during data preparation?_
-
-Any data cleaning (beyond removing duplicates), preparation, or analysis like tasks performed on the whole dataset (prior to splitting) may result in leakage from the test set to the train set and a potential optimistic bias.
+Leakage of information about the test set (data or what models work well) to the train set/test harness is called "**test set leakage**" or simply **data leakage** and may introduce an optimistic bias: better results than we should expect in practice.
 
 This bias is typically not discovered until the model is employed on entirely new data or deployed to production.
 
-1. Did you perform data scaling on the whole dataset prior to the split (e.g. standardization, normalization, etc.)?
-2. Did you perform data transforms on the whole dataset prior to the split (e.g. power transform, log transform, etc.)?
-3. Did you impute missing values on the whole dataset prior to the split (e.g. mean/median impute, knn impute, etc.)?
-4. Did you engineer new features on the whole dataset prior to the split (e.g. one hot encode, integer encode, etc.)?
-5. Did you perform exploratory data analysis (EDA) on the whole dataset prior to the split (e.g. statistical summaries, plotting, etc.)?
+### Data Preparation Leakage
+
+Any data cleaning (beyond removing duplicates), preparation, or analysis like tasks performed on the whole dataset (prior to splitting) may result "**data preparation leakage**".
+
+You must prepare/analyze the train set only.
+
+* _Is there evidence that knowledge from the test set leaked to the train set during data preparation?_
+
+1. Are there duplicate examples in the test set and the train set (e.g. you forgot to remove duplicates or the train/test sets are not disjoint)?
+2. Did you perform data scaling on the whole dataset prior to the split (e.g. standardization, normalization, etc.)?
+3. Did you perform data transforms on the whole dataset prior to the split (e.g. power transform, log transform, etc.)?
+4. Did you impute missing values on the whole dataset prior to the split (e.g. mean/median impute, knn impute, etc.)?
+5. Did you engineer new features on the whole dataset prior to the split (e.g. one hot encode, integer encode, etc.)?
+6. Did you perform exploratory data analysis (EDA) on the whole dataset prior to the split (e.g. statistical summaries, plotting, etc.)?
+7. Did you engineer features that include information about the target variable?
+
+### Test Harness Leakage
+
+On the test harness, we may use a train/validation set split, k-fold cross-validation or similar resampling techniques to evaluate candidate models.
+
+Performing data preparation techniques on the entire train set prior to splitting the data for candidate model evaluation may result in "**test harness leakage**".
+
+Similarly, optimizing model hyperparameters on the same test harness as is used for model selection may result in overfitting and an optimistic bias.
+
+1. Did you perform data preparation (e.g. scaling, transforms, imputation, feature engineering, etc.) on the entire train set before a train/val split or k-fold cross-validation?
+	- Prepare data for the model on the train set/train folds only.
+2. Did you tune model hyperparameters using the same train/validation split or k-fold cross-validation splits as you did for model selection?
+
+### Model Performance Leakage
+
+Any knowledge of what models work well or don't work well on the test set used for model selection on the training data/test harness may result in "**model performance leakage**".
+
+* _Is there evidence that knowledge about what works well on the test set has leaked to the test harness?_
+
+1. Did you evaluate and review/analyze the results the chosen model on the test set more than once?
+2. Did you use knowledge about what models or model configurations work well on the test set to make changes to candidate models in evaluated on the train set/test harness?
+
 
 ## Quantify the Performance Gap
 
@@ -378,6 +408,8 @@ This can happen if the test set is evaluated and knowledge is used in the test h
 
 This is called test set leakage and results in an optimistic estimate of model performance.
 
+See the section on Data Leakage above.
+
 
 ## Model Robustness/Stability Checks
 
@@ -421,7 +453,7 @@ If test set performance is to be presented to stakeholders, don't present a poin
 In most cases, the fix involves making the test harness results less biased (avoid overfitting) and more stable/robust (more performance sampling).
 
 1. Use k-fold cross-validation, if you're not already.
-	- See [KFold](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.KFold.html) and [StratifiedKFold](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.StratifiedKFold.html).
+	- See [`KFold`](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.KFold.html) and [`StratifiedKFold`](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.StratifiedKFold.html).
 2. Use 10 folds instead of 5 or 3, if you can afford the computational cost.
 3. Use repeated 10-fold cross-validation, if you can afford the computational cost.
 	- See [`RepeatedKFold`](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.RepeatedKFold.html) and [`RepeatedStratifiedKFold`](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)
