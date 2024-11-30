@@ -17,22 +17,22 @@ Home: <https://github.com/Jason2Brownlee/DataScienceDiagnosticChecklist>
 1. [Problem Definition](#problem-definition)
 2. [Train/Test Split Procedure](#traintest-split-procedure)
 3. [Split Size Sensitivity Analysis](#split-size-sensitivity-analysis)
-3. [Data Preparation Leakage](#data-preparation-leakage)
-4. [Quantify the Performance Gap](#quantify-the-performance-gap)
-5. [Challenge the Performance Gap](#challenge-the-performance-gap)
-6. [Data Distribution Checks](#data-distribution-checks)
-7. [Performance Distribution Checks](#performance-distribution-checks)
-8. [Residual Error Checks](#residual-error-checks)
-9. [Residual Error Distribution Checks](#residual-error-distribution-checks)
-10. [Overfitting Train Set Checks](#overfitting-train-set-checks)
-11. [Overfitting Test Harness Checks](#overfitting-test-harness-checks)
-12. [Overfitting Test Set Checks](#overfitting-test-set-checks)
-13. [Model Robustness/Stability Checks](#model-robustnessstability-checks)
-14. [So Now What? Interventions](#so-now-what-interventions)
-15. [Frequently Asked Questions](#frequently-asked-questions)
-16. [Glossary of Terms](#glossary-of-terms)
-17. [Disclaimer](#disclaimer)
-18. [About](#about)
+4. [Data Preparation Leakage](#data-preparation-leakage)
+5. [Quantify the Performance Gap](#quantify-the-performance-gap)
+6. [Challenge the Performance Gap](#challenge-the-performance-gap)
+7. [Data Distribution Checks](#data-distribution-checks)
+8. [Performance Distribution Checks](#performance-distribution-checks)
+9. [Residual Error Checks](#residual-error-checks)
+10. [Residual Error Distribution Checks](#residual-error-distribution-checks)
+11. [Overfitting Train Set Checks](#overfitting-train-set-checks)
+12. [Overfitting Test Harness Checks](#overfitting-test-harness-checks)
+13. [Overfitting Test Set Checks](#overfitting-test-set-checks)
+14. [Model Robustness/Stability Checks](#model-robustnessstability-checks)
+15. [So Now What? Interventions](#so-now-what-interventions)
+16. [Frequently Asked Questions](#frequently-asked-questions)
+17. [Glossary of Terms](#glossary-of-terms)
+18. [Disclaimer](#disclaimer)
+19. [About](#about)
 
 ## Problem Definition
 
@@ -87,7 +87,7 @@ The motivating question here is:
 * _What evidence is there that one split size is better than another?_
 
 ### Split vs Distribution Sensitivity
-Compare data distributions of train/test sets and find the point where they diverge (see [Data Distribution Tests](/diagnostics/distribution)).
+Compare data distributions of train/test sets and find the point where they diverge (Data Distribution Tests below).
 
 1. Compare the correlations of each input/target variable (e.g. Pearson's or Spearman's).
 2. Compare the central tendencies for each input/target variable (e.g. t-Test or Mann-Whitney U Test).
@@ -96,7 +96,7 @@ Compare data distributions of train/test sets and find the point where they dive
 5. Compare the divergence for the input/target variable distributions.
 
 ### Split vs Performance Sensitivity
-Compare the distributions of standard un-tuned machine learning model performance scores on train/test sets and find the point where they diverge (see [Model Performance Tests](/diagnostics/performance)).
+Compare the distributions of standard un-tuned machine learning model performance scores on train/test sets and find the point where they diverge (Model Performance Tests below).
 
 1. Compare the correlations of model performance scores (e.g. Pearson's or Spearman's).
 2. Compare the central tendencies of model performance scores (e.g. t-Test or Mann-Whitney U Test).
@@ -421,12 +421,14 @@ If test set performance is to be presented to stakeholders, don't present a poin
 In most cases, the fix involves making the test harness results less biased (avoid overfitting) and more stable/robust (more performance sampling).
 
 1. Use k-fold cross-validation, if you're not already.
+	- See [KFold](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.KFold.html) and [StratifiedKFold](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.StratifiedKFold.html).
 2. Use 10 folds instead of 5 or 3, if you can afford the computational cost.
 3. Use repeated 10-fold cross-validation, if you can afford the computational cost.
+	- See [`RepeatedKFold`](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.RepeatedKFold.html) and [`RepeatedStratifiedKFold`](https://scikit-learn.org/dev/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)
 4. Use a pipeline of data cleaning, transforms, feature engineering, etc. steps that are applied automatically.
 	- The pipeline steps must be fit on train data (same data used to fit a candidate/final model) and applied to all data before it touches the model.
 	- See [`sklearn.pipeline.Pipeline`](https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html)
-5. Use nested k-fold cross-validation or nested train/validation split to tune model hyperparameters for a chosen model.
+5. Use nested cross-validation or nested train/validation split to tune model hyperparameters for a chosen model.
 
 ### 3. Fix Overfit Models
 
