@@ -16,6 +16,7 @@ Home: <https://github.com/Jason2Brownlee/DataScienceDiagnosticChecklist>
 
 1. [Problem Definition](#problem-definition)
 2. [Train/Test Split Procedure](#traintest-split-procedure)
+3. [Split Size Sensitivity Analysis](#split-size-sensitivity-analysis)
 3. [Data Preparation Leakage](#data-preparation-leakage)
 4. [Quantify the Performance Gap](#quantify-the-performance-gap)
 5. [Challenge the Performance Gap](#challenge-the-performance-gap)
@@ -73,29 +74,35 @@ Related:
 3. Did you remove unambiguously irrelevant features (e.g. database id, last updated datetime, etc.)?
 4. According to domain experts, are samples from the dataset i.i.d (e.g. no known spatial/temporal/group dependence, concept/distribution shifts, sample bias, etc.)?
 
-### Sensitivity Analysis
+## Split Size Sensitivity Analysis
+
+<img src="pics/logo-sensitivity.svg" width="300" />
+
+Common split percentages are just heuristics, it is better to know how your data/model behave under different split scenarios.
 
 If you have the luxury of time and compute, perform a sensitivity analysis of split sizes (e.g. between 50/50 to 99/1 with some linear interval) and optimize for one or more target properties of stability like data distribution and/or model performance.
 
-#### Split vs Distribution Sensitivity
-Compare data distributions of train/test sets and find the point where they diverge.
+The motivating question here is:
 
-**Warning**: To avoid leakage, do not review summary statistics of the data directly, only the output and interpretation of the statistical tests.
+* _What evidence is there that one split size is better than another?_
+
+### Split vs Distribution Sensitivity
+Compare data distributions of train/test sets and find the point where they diverge (see [Data Distribution Tests](/diagnostics/distribution)).
 
 1. Compare the correlations of each input/target variable (e.g. Pearson's or Spearman's).
 2. Compare the central tendencies for each input/target variable (e.g. t-Test or Mann-Whitney U Test).
 3. Compare the distributions for each input/target variable (e.g. Kolmogorov-Smirnov Test or Anderson-Darling Test).
 4. Compare the variance for each input/target variable (e.g. F-test, Levene's test).
+5. Compare the divergence for the input/target variable distributions.
 
-#### Split vs Performance Sensitivity
-Compare the distributions of standard un-tuned machine learning model performance scores on train/test sets and find the point where they diverge.
-
-**Warning**: To avoid leakage, do not review performance scores directly, only the output and interpretation of the statistical tests.
+### Split vs Performance Sensitivity
+Compare the distributions of standard un-tuned machine learning model performance scores on train/test sets and find the point where they diverge (see [Model Performance Tests](/diagnostics/performance)).
 
 1. Compare the correlations of model performance scores (e.g. Pearson's or Spearman's).
 2. Compare the central tendencies of model performance scores (e.g. t-Test or Mann-Whitney U Test).
 3. Compare the distributions of model performance scores (e.g. Kolmogorov-Smirnov Test or Anderson-Darling Test).
 4. Compare the variance of model performance scores (e.g. F-test, Levene's test).
+5. Compare the divergence of model performance score distributions.
 
 ## Data Preparation Leakage
 
@@ -421,7 +428,7 @@ In most cases, the fix involves making the test harness results less biased (avo
 	- See [`sklearn.pipeline.Pipeline`](https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html)
 5. Use nested k-fold cross-validation or nested train/validation split to tune model hyperparameters for a chosen model.
 
-### 3. Fix Overfitting Generally
+### 3. Fix Overfit Models
 
 Even with best practices, high-capacity models can overfit.
 
