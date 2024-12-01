@@ -548,10 +548,10 @@ When comparing distribution central tendencies on train vs test folds under k-fo
 
 I've not had much luck with these measures in practice. Also, classical ideas of overfitting were focused on "overparameterization". I'm not convinced this is entirely relevant with modern machine learning and deep learning models. We often overparameterize and still achieve SOTA performance. Put another way: Overfitting != Overparameterization. That being said, regularizing away from large magnitude coefficients/weights remains a good practice when overfit.
 
-**Q. Help! The test results are ambiguous. What do I do?**
+**Q. The test result is ambiguous, what do I do?**
 
 This is the case more often than not. Don't panic, here are some ideas:
-- Can you vary the test harness in some way in order to increase the size of the statistical sample (e.g. k=10 in cross-valuation, repeated cross-validation, bootstrap samples, etc.)?
+- Can you increase the sensitivity of the test (e.g. smaller p value, larger sample, etc.)?
 - Can you perform a sensitivity analysis for the test and see if there is a point of transition?
 - Can you try a different but related test to see if it provides less ambiguous results?
 - Can you try a completely different test type to see if it gives a stronger signal?
@@ -559,6 +559,15 @@ This is the case more often than not. Don't panic, here are some ideas:
 **Q. Help! All checks suggest my test set is no good. What do I do?**
 
 Good, we learned something about the project! Apply the same test to alternate splits of the data (ideally, a sensitivity analysis of many different split sizes) and compare the results. Do they improve? Typically there is a split size that defines a transition point between stable statistical tests/performance and unstable results.
+
+**Q. Can you recommend further reading to learn more about this type of analysis?**
+
+Yes, read these books:
+
+* [Statistics in Plain English](https://amzn.to/3Vii1Mi) (2016). Get up to speed on parametric statistics.
+* [Nonparametric Statistics for Non-Statisticians](https://amzn.to/3CWo82L) (2009). Get up to speed on non-parametric statistics.
+* [Introduction to the New Statistics](https://amzn.to/49f9ako) (2024). Get up to speed on estimation statistics.
+* [Empirical Methods for Artificial Intelligence](https://amzn.to/4gfMJ0X) (1995). This is an old favorite that will give some practical grounding.
 
 ## Glossary of Terms
 
