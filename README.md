@@ -182,7 +182,7 @@ There is variance in the model (e.g. random seed, training data) and variance in
 
 ## Challenge the Performance Gap
 
-<img src="pics/logo-loss.svg" width="300" />
+<img src="pics/logo-challenge.svg" width="300" />
 
 Often the train set score on the test harness is a mean (e.g. via k-fold cross-validation) and the test set score is a point estimate. Perhaps comparing these different types of quantities is the source of the problem.
 

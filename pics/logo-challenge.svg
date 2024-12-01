@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying glass elements -->
+  <path d="M140 140 L 180 180" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#2D3748" stroke-width="12"/>
+  <circle cx="100" cy="100" r="54" fill="#E2E8F0"/>
+  
+  <!-- Training loss (goes lower, ending higher) -->
+  <path d="M60 75
+           C 70 85, 75 95, 85 105
+           C 95 115, 100 120, 110 125
+           C 120 130, 125 128, 135 128"
+        fill="none" stroke="#4299E1" stroke-width="3"/>
+
+  <!-- Intermediate curves (blue to red transition) -->
+  <path d="M60 75
+           C 70 84, 75 93, 85 102
+           C 95 111, 100 115, 110 119
+           C 120 123, 125 121, 135 121"
+        fill="none" stroke="#4299E1" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <path d="M60 75
+           C 70 83, 75 91, 85 99
+           C 95 107, 100 110, 110 113
+           C 120 116, 125 114, 135 114"
+        fill="none" stroke="#4299E1" stroke-width="1.5" stroke-opacity="0.2"/>
+
+  <path d="M60 75
+           C 70 82, 75 89, 85 96
+           C 95 103, 100 105, 110 108
+           C 120 111, 125 107, 135 107"
+        fill="none" stroke="#F56565" stroke-width="1.5" stroke-opacity="0.2"/>
+
+  <path d="M60 75
+           C 70 81, 75 87, 85 93
+           C 95 99, 100 100, 110 103
+           C 120 106, 125 101, 135 101"
+        fill="none" stroke="#F56565" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Validation loss (stays higher) -->
+  <path d="M60 75
+           C 70 80, 75 85, 85 90
+           C 95 95, 100 95, 110 98
+           C 120 101, 125 95, 135 95"
+        fill="none" stroke="#F56565" stroke-width="3"/>
+
+  <!-- Points on training curve -->
+  <circle cx="85" cy="105" r="2" fill="#4299E1"/>
+  <circle cx="110" cy="125" r="2" fill="#4299E1"/>
+  <circle cx="135" cy="128" r="2" fill="#4299E1"/>
+
+  <!-- Points on validation curve -->
+  <circle cx="85" cy="90" r="2" fill="#F56565"/>
+  <circle cx="110" cy="98" r="2" fill="#F56565"/>
+  <circle cx="135" cy="95" r="2" fill="#F56565"/>
+</svg>
