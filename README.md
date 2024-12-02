@@ -616,9 +616,11 @@ Chat with an LLM, with your data science friend, with your statistician friend a
 
 Hi there, I'm Jason Brownlee ([twitter](https://x.com/jason2brownlee), [linkedin](https://www.linkedin.com/in/jasonbrownlee/)), the author of this checklist.
 
-I've worked as an engineer on modeling and high-performance computing projects in industry, government, startups, and a long time ago, I had more academic aspirations and completed a Masters and PhD in stochastic optimization. I've been helping data scientists for more than a decade via coaching and consulting and answering tens of thousands of emailed questions. I've also authored 1,000+ tutorials and 20+ books on machine learning and deep learning over at my former company [Machine Learning Mastery](https://machinelearningmastery.com), which I sold in 2021.
+I've worked as an engineer on modeling and high-performance computing projects in industry, government, startups, and a long time ago, I had more academic aspirations and completed a Masters and PhD in stochastic optimization.
 
-I've helped thousands of budding and professional data scientists one-on-one over the years. The **most common problem** that we work on together is the **Generalization Gap**. This is where performance on new data in the test set or in production is worse than the expected performance from the test harness.
+I've been helping data scientists for more than a decade via coaching and consulting and answering tens of thousands of emailed questions. I've also authored 1,000+ tutorials and 20+ books on machine learning and deep learning over at my former company [Machine Learning Mastery](https://machinelearningmastery.com), which I sold in 2021.
+
+I've worked with hundreds (probably thousands) of budding and professional data scientists one-on-one over the years. The **most common problem** that we work on together is the **Generalization Gap**. This is where performance on new data in the test set or in production is worse than the expected performance from the test harness.
 
 The checklist above is (an updated version of) a diagnostic tool I used to work through the problem with my clients.
 
