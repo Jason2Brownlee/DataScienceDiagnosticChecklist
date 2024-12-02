@@ -29,7 +29,7 @@ Home: <https://github.com/Jason2Brownlee/DataScienceDiagnosticChecklist>
 13. [Overfitting Test Set Checks](#overfitting-test-set-checks)
 14. [Model Robustness/Stability Checks](#model-robustnessstability-checks)
 15. [So Now What? Interventions](#so-now-what-interventions)
-16. [Frequently Asked Questions](#frequently-asked-questions)
+16. [FAQ](#frequently-asked-questions)
 17. [Glossary of Terms](#glossary-of-terms)
 18. [Disclaimer](#disclaimer)
 19. [About](#about)
@@ -504,21 +504,29 @@ Sometimes this is not possible, in which case:
 
 ## Frequently Asked Questions
 
+**Q. Isn't this just undergrad stats?**
+
+Yes, applied systematically.
+
 **Q. Do I need to perform all of these checks?**
 
 No. Use the checks that are appropriate for your project. For example, checks that use k-fold cross-validation may not be appropriate for a deep learning model that takes days/weeks to fit. Use your judgement.
 
-**Q. Is this overkill?**
+**Q. Are these checks overkill?**
 
-Yeah, probably. You often catch major issues with a quick data and performance distribution comparison of the train/test sets.
+Yes, probably.
+
+**Q. What's the 80/20?**
+
+Follow best practices in the split procedure. Using distribution checks will catch most problems on a pre-defined test set. Avoid test set leakage with test harness best practices like pipelines and nested cross-validation. Avoid a final point performance estimates with bootstrapping.
+
+**Q. What's the most common cause of the problem?**
+
+The most common cause is poor/fragile test harness (use best practices!). After that, the cause is statistical noise, which is ironed out with more robust performance estimates (e.g. bootstrap the test set and compare distributions/confidence intervals). After that, its some kind of test set leakage or a test set provided by a third party/stakeholder with differing distributions.
 
 **Q. Don't I risk test set leakage and overfitting if I evaluate a model on the test set more than once?**
 
 Yes. Strictly, the test set must be discarded after being used once. You can choose to bend this rule at your own risk. If you use these checks at the beginning of a project and carefully avoid and omit any summary stats/plots of data and model performance on the test set (e.g. only report the outcomes of statistical tests), then I suspect the risk is minimal.
-
-**Q. Do you have code snippets or examples of the statistical tests?**
-
-Yes, tons. Email me and I can send something through. If there's enough demand, I'll put something more comprehensive together. Maybe a lib or a mini site of examples.
 
 **Q. Do all of these checks help?**
 
@@ -534,11 +542,11 @@ No.
 
 **Q. Does this really matter?**
 
-Perhaps. It comes down to a judgement call, like most things.
+Yes, perhaps. It comes down to a judgement call, like most things.
 
 **Q. Do you do this on your own projects?**
 
-Yeah, a lot of it. I want to be able to (metaphorically) stand tall, put my hand on my heart, and testify that the test set results on it are as correct and indicative of real world performance as I know how to make them.
+Yeah, a lot of it. I want to be able to (metaphorically) stand tall, put my hand on my heart, and testify that the test set results are as correct and indicative of real world performance as I know how to make them.
 
 **Q. Why do we sometimes use a paired t-Test and sometimes not (and Mann-Whitney U Test vs Wilcoxon signed-rank test)**
 
@@ -556,9 +564,9 @@ This is the case more often than not. Don't panic, here are some ideas:
 - Can you try a different but related test to see if it provides less ambiguous results?
 - Can you try a completely different test type to see if it gives a stronger signal?
 
-**Q. Help! All checks suggest my test set is no good. What do I do?**
+**Q. All checks suggest my test set is no good, what do I do?**
 
-Good, we learned something about the project! Apply the same test to alternate splits of the data (ideally, a sensitivity analysis of many different split sizes) and compare the results. Do they improve? Typically there is a split size that defines a transition point between stable statistical tests/performance and unstable results.
+Good, we learned something about your project! See the interventions.
 
 **Q. Can you recommend further reading to learn more about this type of analysis?**
 
