@@ -438,7 +438,9 @@ We assume that small changes to the model and data result in proportionally smal
 
 <img src="pics/logo-fixes.svg" width="300" />
 
-So, there may be an issue with your test set or your model. Now what do we do?
+So, there may be an issue with your test set, train set, or your model. Now what do we do?
+
+Below are some plans of attack:
 
 ### 1. Do Nothing
 
@@ -462,6 +464,8 @@ In most cases, the fix involves making the test harness results less biased (avo
 	- See [`sklearn.pipeline.Pipeline`](https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html)
 5. Use nested cross-validation or nested train/validation split to tune model hyperparameters for a chosen model.
 
+**Warning**: After fixing the test harness, if you want to choose a different model/configuration and evaluate it on the test set, you should probably develop a new test set to avoid any test set leakage.
+
 ### 3. Fix Overfit Models
 
 Even with best practices, high-capacity models can overfit.
@@ -475,7 +479,9 @@ This is a big topic, but to get started, consider:
 
 Beyond these simple measures: dive into the literature for your domain and for your model and sniff out common/helpful regularization techniques you can test.
 
-### 4. Fix the Test Set
+**Warning**: After fixing your model, if you want to evaluate it on the test set, you should probably develop a new test set to avoid any test set leakage.
+
+### 4. Fix the Test Set (_danger!_)
 
 Perhaps the test set is large enough and data/performance distributions match well enough, but there are specific examples that are causing problems.
 
@@ -485,20 +491,27 @@ Perhaps the test set is large enough and data/performance distributions match we
 * Perhaps a weighting can be applied to samples and a sample-weighting aware learning algorithm can be used?
 * Perhaps you can augment the test set with artificial/updated/contrived examples (danger)?
 
-**Warning**: Purists will hate this, for good reason. There is a slippery slope of removing all the hard-to-predict examples or too many examples. You're intentionally biasing the data and manipulating the results. Your decisions need to be defensible.
+**Warning**: There is a slippery slope of removing all the hard-to-predict examples or too many examples. You're intentionally biasing the data and manipulating the results. Your decisions need to be objectively defensible in front of your harshest critic.
 
-### 5. Get a New Test Set
+### 5. Get a New Test Set (_do this_)
 
-Perhaps the test set is too small (high variance of results) or the data/performance distributions are different or one of many reasons above.
+Perhaps the test set is too small, or the data/performance distributions are significantly different, or some other key failing.
 
-* Discard the test set, gather a new test set and develop a new unbiased estimate of the model's generalized performance.
+* Discard the test set, gather a new test set (using best practices) and develop a new unbiased estimate of the model's generalized performance.
 
-Sometimes this is not possible, in which case:
+Consider using some distribution and/or performance checks to have prior confidence in the test set before adopting it.
+
+### 6. Reconstitute the Test Set
+
+Sometimes acquiring a new test set  is not possible, in which case:
 
 * Combine train and test set into the whole dataset again and develop a new split using best practices above
 	* Ideally use a sensitivity analysis to ensure to choose an optimal split/avoid the same problem.
 
-**Warning**: Purists will hate this too, for good reason. There is a risk of an optimistic bias with this approach as you already know something about what does/doesn't work on examples in the original test set.
+Although risky, this is common because of real world constraints on time, data, domain experts, etc.
+
+**Warning**: There is a risk of an optimistic bias with this approach as you already know something about what does/doesn't work on examples in the original test set.
+
 
 
 
