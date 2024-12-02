@@ -446,9 +446,10 @@ Below are some plans of attack:
 
 Take the estimate of model performance on the test set as the expected behavior of the model on new data.
 
-If test set performance is to be presented to stakeholders, don't present a point estimate.
+If test set performance is to be presented to stakeholders, don't present a point estimate:
 
 * Estimate performance using many (30+) bootstrap samples of the test set and report the median and 95% confidence interval.
+* Fit multiple different versions of the final model (e.g. with different random seeds) and ensemble their predictions as the “chosen model” to reduce the variance of predictions made by the model.
 
 ### 2. Fix the Test Harness
 
