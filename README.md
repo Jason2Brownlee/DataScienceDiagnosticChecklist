@@ -154,31 +154,26 @@ Any knowledge of what models work well or don't work well on the test set used f
 
 <img src="pics/logo-gap.svg" width="300" />
 
-There is variance in the model (e.g. random seed, training data) and variance in its performance (e.g. test data). Vary these elements and see if the distributions overlap or not. If they do, any gap might be statistical noise. If they don't, it might be a real issue that requires more digging.
+There is variance in the model (e.g. random seed, specific training data, etc.) and variance in its performance (e.g. test harness, specific test data, etc.).
 
-* _Is there empirical evidence that the performance gap between the test harness and the test set is a concern (warrants further investigation)?_
+Vary these elements and see if the distributions overlap or not.
 
-**Warning**: To avoid leakage, do not review performance scores directly, only the output and interpretation of the statistical tests.
+If they do, any gap might be statistical noise (e.g. not a real effect). If they don't, it might be a real issue that requires more digging.
+
+* > _Is there evidence that the performance gap between the test harness and the test set is a warrants further investigation?_
 
 1. Are you optimizing one (and only one) performance metric for the task?
-2. What are the specific performance scores on the test harness and test set.
-	1. Include mean and standard deviation for test harness scores if a resampling method like k-fold cross-validation was used.
-3. What is the absolute difference in scores between the test harness and test set?
+2. What are the specific performance scores on the test harness and test set (e.g. min/max, mean/stdev, point estimate, etc.).
+3. What is the generalization gap, calculated as the absolute difference in scores between the test harness and test set?
 4. Does the chosen model outperform a dummy/naive model (e.g. predict mean/median/mode etc.) on the test harness and test set (e.g. does it have any skill)?
-5. Are you able to evaluate a diverse suite of many (e.g. 10+) untuned standard machine learning models on the training and test sets and calculate their generalization gap (absolute difference) in order to give a reference distribution for comparison?
-	1. Is the chosen model generalization gap within the confidence interval of the standard model gaps?
-	2. Is the chosen model generalization gap within the standard error of the standard model gaps?
-6. Are you able to evaluate the single chosen model many times (e.g. 30+, 100-1000) on bootstrap samples of the test set?
-	1. Is the train performance within the confidence interval of performance on the test set?
-	2. Is the train performance within the standard error of performance on the test set?
+5. Are you able to evaluate a diverse suite of many (e.g. 10+) untuned standard machine learning models on the training and test sets and calculate their generalization gap (absolute difference) to establish a reference range?
+	1. Is the chosen models' performance gap within the calculate a reference range for the performance gap for your test harness and test set (e.g. min/max, confidence interval, standard error, etc.)?
+6. Are you able to evaluate the final chosen model many times (e.g. 30+, 100-1000) on bootstrap samples of the test set to establish a test set performance distribution?
+	- Is the train set (test harness) performance within the test set distribution (e.g. min/max, confidence interval, etc.)
 7. Are you able to develop multiple estimates of model performance on the training dataset (e.g. k-fold cross-validation, repeated train/test splits, bootstrap, checkpoint models, etc.)?
-	1. Is the test set performance within the confidence interval of the performance estimate from the train set?
-	2. Is the test set performance within the standard error of the performance estimate from the train set?
-8. Are you able to fit multiple different versions of the chosen model on the training dataset (e.g. with different random seeds, related to model robustness tests below)?
-	1. Are performance scores highly correlated?
-	2. Do the performance scores on train and test sets have the same central tendencies (e.g. t-Test or Mann-Whitney U Test)?
-	3. Do the performance scores on train and test sets have the same distributions (e.g. Kolmogorov-Smirnov Test or Anderson-Darling Test)?
-	4. Do the performance scores on train and test sets have the same variance (e.g. F-test, Levene's test)?
+	- Is the test set performance within the train set (test harness) performance distribution (e.g. min/max, confidence interval, etc.)?
+8. Are you able to fit and evaluate multiple different versions of the chosen model on the train set (e.g. with different random seeds)?
+	- Is the test set performance within the train set (test harness) performance distribution (e.g. min/max, confidence interval, etc.)?
 
 ## Challenge the Performance Gap
 
