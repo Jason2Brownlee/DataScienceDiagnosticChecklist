@@ -160,7 +160,7 @@ Vary these elements and see if the distributions overlap or not.
 
 If they do, any gap might be statistical noise (e.g. not a real effect). If they don't, it might be a real issue that requires more digging.
 
-* > _Is there evidence that the performance gap between the test harness and the test set is a warrants further investigation?_
+* _Is there evidence that the performance gap between the test harness and the test set is a warrants further investigation?_
 
 1. Are you optimizing one (and only one) performance metric for the task?
 2. What are the specific performance scores on the test harness and test set (e.g. min/max, mean/stdev, point estimate, etc.).
