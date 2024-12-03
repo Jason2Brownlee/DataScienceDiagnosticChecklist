@@ -4,7 +4,7 @@
 
 This problem is typically referred to as the "_**generalization gap**_", "_**train-test gap**_", or simply as "_**overfitting**_", where performance of a final chosen model on the hold out test set is worse than on the train set.
 
-We can use diagnostic tests to systematically probe the data and the model in order to gather evidence about the unknown underlying cause of a performance mismatch. We probably cannot _know_ anything for sure, but we can build a case and then take action in response. You will eventually have to make a judgement call.
+We can use diagnostic tests to systematically probe the data and the model in order to gather evidence about the unknown underlying cause of a performance mismatch.
 
 **Scope**: Machine learning and deep learning predictive modeling for regression and classification tasks.
 
