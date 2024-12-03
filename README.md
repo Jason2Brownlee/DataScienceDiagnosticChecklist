@@ -207,7 +207,7 @@ Next, compare the distributions of these performance scores.
 3. Do the performance scores on train and test sets have the same distributions (e.g. Kolmogorov-Smirnov Test or Anderson-Darling Test)?
 4. Do the performance scores on train and test sets have the same variance (e.g. F-test, Levene's test)?
 5. Is the effect size of the difference in performance between the train and test scores small (e.g. Cohen's d)?
-6. Do performance score points on a scatter plot fall on the expected diagonal line (or close enough to it)?
+6. Is divergence in the performance distributions between the train and test scores is small (e.g. KL-divergence or JS-divergence)?
 
 ## Data Distribution Checks
 
