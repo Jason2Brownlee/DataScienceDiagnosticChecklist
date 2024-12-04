@@ -224,12 +224,13 @@ These checks are most useful if train and test sets had separate sources or we s
 1. Do numerical input/target variables have the same central tendencies (e.g. t-Test or Mann-Whitney U Test)?
 2. Do numerical input/target variables have the same distributions (e.g. Kolmogorov-Smirnov Test or Anderson-Darling Test)?
 3. Do categorical input/target variables have the same distributions (e.g. Chi-Square Test)?
-4. Are pair-wise correlations between numerical input variable distributions consistent (e.g. Pearson’s or Spearman’s, threshold difference, Fisher’s z-test, etc.)?
-5. Are pair-wise correlations between numerical input and target variable distributions consistent (e.g. Pearson’s or Spearman’s, threshold difference, Fisher’s z-test, etc.)?
-6. Do numerical variables have a low divergence in distributions (e.g. KL-divergence or JS-divergence)?
-7. Does each variable in the train vs test set have a small effect size (e.g. Cohen’s d or Cliff’s delta)?
-8. Do input/target variables in the train and test sets have a similar distributions of univariate outliers (e.g. 1.5xIQR, 3xstdev, etc.)?
-9. Do the train and test sets have a similar pattern of missing values (e.g. statistical tests applied to number of missing values)?
+4. Do numerical input/target variables have the same distribution variance (e.g. F-test, Levene’s test)?
+5. Are pair-wise correlations between numerical input variable distributions consistent (e.g. Pearson’s or Spearman’s, threshold difference, Fisher’s z-test, etc.)?
+6. Are pair-wise correlations between numerical input and target variable distributions consistent (e.g. Pearson’s or Spearman’s, threshold difference, Fisher’s z-test, etc.)?
+7. Do numerical variables have a low divergence in distributions (e.g. KL-divergence or JS-divergence)?
+8. Does each variable in the train vs test set have a small effect size (e.g. Cohen’s d or Cliff’s delta)?
+9. Do input/target variables in the train and test sets have a similar distributions of univariate outliers (e.g. 1.5xIQR, 3xstdev, etc.)?
+10. Do the train and test sets have a similar pattern of missing values (e.g. statistical tests applied to number of missing values)?
 
 Extensions:
 
