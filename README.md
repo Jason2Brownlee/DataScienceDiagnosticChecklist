@@ -318,7 +318,6 @@ For regression tasks and classification tasks that require probabilities:
 3. Do the residual errors on train and test sets have the same distributions (e.g. Kolmogorov-Smirnov Test or Anderson-Darling Test)?
 4. Do the residual errors on train and test sets have the same variance (e.g. F-test, Levene's test)?
 5. Is the effect size of the difference in residual errors between the train and test scores small (e.g. Cohen's d)?
-6. Do residual errors points on a scatter plot fall on the expected diagonal line?
 
 For classification tasks that require a nominal class label:
 
